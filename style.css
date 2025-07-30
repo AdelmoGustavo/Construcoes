@@ -5,24 +5,32 @@
     font-family: 'Mukta', sans-serif;
 }
 
-
 body {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 20px;
 }
 
 .logo-mario {
-    width: 300px;
+    width: 250px;
+    max-width: 90vw;
 }
 
 .imagem-mario-luigi {
-    height: 600px;
+    height: 400px;
+    max-width: 90vw;
+    object-fit: contain;
 }
 
 .caixa-principal {
-    width: 40%;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    z-index: 2;
 }
 
 .caixa-video-mario {
@@ -32,6 +40,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 video {
     position: fixed;
     top: 0;
@@ -50,7 +59,8 @@ video {
 p {
     color: white;
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 20px;
+    padding: 0 10px;
 }
 
 button {
@@ -62,6 +72,7 @@ button {
     color: #fff;
     margin-top: 20px;
     cursor: pointer;
+    align-self: center;
 }
 
 .fale-conosco {
@@ -75,23 +86,20 @@ button {
     left: -320px;
     transition: left 1s linear;
     z-index: 4;
+    width: 90vw;
+    max-width: 350px;
 }
 
-input {
-    height: 40px;
+input, textarea {
+    width: 100%;
     border-radius: 3px;
     border: 1px solid gray;
-    padding-left: 10px;
+    padding: 10px;
     outline-color: chartreuse;
 }
 
 textarea {
     height: 90px;
-    width: 300px;
-    border-radius: 3px;
-    border: 1px solid gray;
-    padding: 10px;
-    outline-color: chartreuse;
 }
 
 .mascara-form {
@@ -102,4 +110,23 @@ textarea {
     top: 0;
     z-index: 3;
     background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+}
+
+/* 📱 RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .imagem-mario-luigi {
+        height: 250px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .caixa-principal {
+        padding: 10px;
+    }
 }
